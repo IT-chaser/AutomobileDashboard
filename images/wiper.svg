@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg2" viewBox="0 0 95.949 73.214" version="1.1">
+  <g id="layer1" transform="translate(-168.2 -300.02)">
+    <g id="g5312" stroke-width="5" stroke="#327dc8" stroke-linecap="round" fill="none">
+      <path id="path5302" transform="translate(175.59 219.84)" d="m57.321 131.96c15.312-20.881 18.25-24.243 18.25-24.243l4.9641-6.2924c4.699-5.957-23.418-13.751-39.821-13.751-16.402 0-45.772 7.462-39.821 14.821l25 29.29z"/>
+      <path id="path5308" style="color:#000000" transform="translate(179.16 218.77)" d="m41.964 142.95c0 2.219-1.7989 4.0178-4.0179 4.0178s-4.0179-1.7988-4.0179-4.0178 1.7989-4.0179 4.0179-4.0179 4.0179 1.7989 4.0179 4.0179z"/>
+      <path id="path5310" transform="translate(175.59 219.84)" d="m41.518 141.88-19.584-52.027"/>
+    </g>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>windshield wiper</dc:title>
+        <dc:date>2013-05-07T09:11:10</dc:date>
+        <dc:description>Icon for windshield wiper like found in cars</dc:description>
+        <dc:source>http://openclipart.org/detail/177850/windshield-wiper-by-dblade82-177850</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>DBlade82</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>car</rdf:li>
+            <rdf:li>icon</rdf:li>
+            <rdf:li>windshield wiper</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

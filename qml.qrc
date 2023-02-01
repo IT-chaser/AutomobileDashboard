@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>SpeedometerStyle.qml</file>
+        <file>ValueSource.qml</file>
+        <file>ArrowIndicator.qml</file>
+        <file>RPMMeterStyle.qml</file>
+        <file>DashboardSimulator.qml</file>
+        <file>VehicleConfiguration.qml</file>
+        <file>VehicleConfModel.qml</file>
+        <file>FuelGaugeStyle.qml</file>
+        <file>TempGaugeStyle.qml</file>
+        <file>DashboardIndicators.qml</file>
+        <file>IndicatorModel.qml</file>
+        <file>images/acin.svg</file>
+        <file>images/battery.svg</file>
+        <file>images/danger.svg</file>
+        <file>images/defrost.svg</file>
+        <file>images/enginefault.svg</file>
+        <file>images/gasoline.svg</file>
+        <file>images/light.svg</file>
+        <file>images/oilpressure.svg</file>
+        <file>images/settings.svg</file>
+        <file>images/speed130.svg</file>
+        <file>images/wiper.svg</file>
+        <file>distance.txt</file>
+    </qresource>
+</RCC>
