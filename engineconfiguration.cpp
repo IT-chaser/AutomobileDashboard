@@ -11,14 +11,15 @@ EngineConfiguration::EngineConfiguration()
     m_fuelLevel = 80;
     m_engineTemp = 60;
     m_distance = 500;
-
     m_curGear = 1;
-
 
     isAccelerating = false;
     isBraking = false;
 
-
+    // binding and connecting the udpSocket
+    udpSocket = new QUdpSocket(this);
+    udpSocket->bind(QHostAddress::LocalHost, 1234);
+    connect(udpSocket, SIGNAL(readyRead()),this,SLOT(readyRead()));
 }
 
 void EngineConfiguration::init() {
@@ -108,6 +109,41 @@ double EngineConfiguration::maxEngineRPM() const {
     return m_maxEngineRPM;
 }
 
+// getting the acelerate and decelerate button click info and writing and sending the accelerate or decelerate message using udpSocket
+void EngineConfiguration::speedStatus(bool spd) {
+    QByteArray datagram;
+    if (spd == true) {
+        datagram.append("accelerate");
+        udpSocket->writeDatagram(datagram, QHostAddress::LocalHost,1234);
+        qDebug() << "Writing accelerate message";
+    } else {
+        datagram.append("decelerate");
+        udpSocket->writeDatagram(datagram, QHostAddress::LocalHost,1234);
+        qDebug() << "Writing decelerate message";
+    }
+}
+// reading the message from udpSocket and running accelerate() or applyBrake() functions
+void EngineConfiguration::readyRead() {
+    while (udpSocket->hasPendingDatagrams()) {
+        QByteArray Buffer;
+        Buffer.resize(udpSocket->pendingDatagramSize());
+
+        udpSocket->readDatagram(Buffer.data(),Buffer.size());
+        if (Buffer == "accelerate") {
+            // perform acceleration
+            accelerate(true);
+            applyBrake(false);
+            qDebug() << "The car is accelerating";
+        }
+        if (Buffer == "decelerate") {
+            // perform deceleration
+            applyBrake(true);
+            accelerate(false);
+            qDebug() << "The car is decelerating";
+        }
+    }
+}
+
 void EngineConfiguration::accelerate(bool acc) {
     if (acc == true) {
         isBraking = false;
@@ -135,6 +171,7 @@ void EngineConfiguration::applyBrake(bool breaks) {
         emit engineRPMChanged();
     }
 }
+
 
 void EngineConfiguration::updateEngineProp(QString param, double value) {
     if (param.compare("engineRPM") == 0) {
@@ -288,3 +325,5 @@ void EngineConfiguration::saveDistance(double tempDist) {
         file.close();
     }
 }
+
+

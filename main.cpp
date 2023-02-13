@@ -7,6 +7,9 @@
 #include <QTranslator>
 
 
+
+
+
 int main(int argc, char *argv[])
 {
     qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
@@ -31,6 +34,7 @@ int main(int argc, char *argv[])
     EngineConfiguration *confptr = new EngineConfiguration();
     confptr->init();
 
+
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
@@ -40,7 +44,7 @@ int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty("engineConfigCPP", confptr);
 
-    engine.load(url);
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     return app.exec();
 }

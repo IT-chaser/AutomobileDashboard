@@ -4,6 +4,7 @@ import QtQuick.VirtualKeyboard 2.15
 import QtQuick.Extras 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls 1.4
+//import QtNetwork 5.15
 
 Window {
     id: window
@@ -35,8 +36,31 @@ Window {
 
             onClicked: {
                 centralPanelLoader.source = "DashboardSimulator.qml"
+                accelerateButton.visible = true
+                decelerateButton.visible = true
             }
         }
+        Button {
+            id: accelerateButton
+            text: qsTr("Accelerate")
+            visible: false
+
+            onClicked: {
+                // send "accelerate" message to C++ code
+                engineConfigCPP.speedStatus(true)
+            }
+        }
+        Button {
+            id: decelerateButton
+            text: qsTr("Decelerate")
+            visible: false
+
+            onClicked: {
+                // send "decelerate" message to C++ code
+                engineConfigCPP.speedStatus(false)
+            }
+        }
+
     }
 
     Loader {

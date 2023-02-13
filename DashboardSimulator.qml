@@ -15,6 +15,8 @@ Item {
         id: indicatorModel
     }
 
+
+
     Rectangle {
         id: dashboard
         anchors.centerIn: parent
@@ -28,6 +30,8 @@ Item {
             anchors.top: parent.top
             anchors.topMargin: dashboard.width * 0.02
             anchors.horizontalCenter: parent.horizontalCenter
+
+
 
             ArrowIndicator {
                 id: leftindicator
@@ -60,8 +64,6 @@ Item {
             spacing: dashboard.width * 0.02
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: indicatorRow.bottom
-
-
 
             CircularGauge {
                 id: tempMeter
@@ -233,4 +235,5 @@ Item {
         }
 
     }
+
 }

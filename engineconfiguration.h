@@ -2,6 +2,9 @@
 #define ENGINECONFIGURATION_H
 
 #include <QObject>
+#include <QtNetwork>
+#include <QUdpSocket>
+
 
 class EngineConfiguration : public QObject
 {
@@ -13,6 +16,7 @@ class EngineConfiguration : public QObject
     Q_PROPERTY(int fuelLevel READ fuelLevel WRITE setFuelLevel NOTIFY fuelLevelChanged)
     Q_PROPERTY(int engineTemp READ engineTemp WRITE setEngineTemp NOTIFY engineTempChanged)
     Q_PROPERTY(QString distance READ distance WRITE setDistance NOTIFY distanceChanged)
+
 public:
     EngineConfiguration();
 
@@ -46,6 +50,8 @@ public:
 
     Q_INVOKABLE double getEngineProperty(QString param);
     Q_INVOKABLE void accelerate(bool acc);
+    // udpSocket function for getting click notification from accelerate and decelerate buttons
+    Q_INVOKABLE void speedStatus(bool spd);
     Q_INVOKABLE void applyBrake(bool breaks);
     Q_INVOKABLE void updateEngineProp(QString param, double value);
 
@@ -53,6 +59,8 @@ public slots:
     void calculateSpeed();
     void calculateDistance();
     void generateEvent();
+    // udpSocket slot for reading datagram
+    void readyRead();
 
 signals:
     void engineRPMChanged();
@@ -86,6 +94,7 @@ private:
 
     bool isAccelerating;
     bool isBraking;
+    QUdpSocket *udpSocket;
 };
 
 #endif // ENGINECONFIGURATION_H
